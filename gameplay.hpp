@@ -1,32 +1,38 @@
 /*****************************************************************************************************
 Name: Jason Daguitera
 CS 162
-File: foyer.hpp
+File: gameplay.hpp
 Description: this the header file for the class objects and methods
 
 ****************************************************************************************************/
-#ifndef FOYER_HPP
-#define FOYER_HPP
+#ifndef GAMEPLAY_HPP
+#define GAMEPLAY_HPP
 
 #include "space.hpp"
+#include "bedroom.hpp"
+#include "livingroom.hpp"
+#include "kitchen.hpp"
 #include "foyer.hpp"
 
-class Foyer : public Space
+
+class GamePlay
 {
 
 private:
-	bool key;
+
+
 
 public:
 	//default constructor
-	Foyer();
+	GamePlay();
 
-	//method to open door - will need a key
-	void doorFront(bool key);
+	Space* enterLivingRoom();
+	Space* enterBedRoom1();
+	Space* enterKitchen();
+	Space* enterFoyer();
 
-	std::string getTypeRoom();
-	
-	}
+
+
 };
 
 #endif

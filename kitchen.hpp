@@ -1,26 +1,29 @@
+
 /*****************************************************************************************************
 Name: Jason Daguitera
 CS 162
-File: livingroom.hpp
+File: kitchen.hpp
 Description: this the header file for the class objects and methods
 
 ***************************************************************************************************/
 
-#ifndef LIVINGROOM_HPP
-#define LIVINGROOM_HPP
+#ifndef KITCHEN_HPP
+#define KITCHEN_HPP
 
 #include "space.hpp"
 
 
-class LivingRoom : public Space 
+class Kitchen : public Space
 {
-private:
-	
-public:
-	
-	//default constructor
-	LivingRoom();
-};
 
+private:
+
+public:
+	//default constructor
+	Kitchen();
+	std::string getTypeRoom();
+
+
+};
 
 #endif

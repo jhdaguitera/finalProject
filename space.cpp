@@ -9,10 +9,38 @@ Description: this the file for implementing space class objects and methods
 #include <string>
 #include "space.hpp"
 
-void Space::setLinkedSpace(Space* top, Space* right, Space* bottom, Space* left)
+
+int Space::interactRoomSpace()  //gives options for user to interact with space
 {
-	this->top = top;
-	this->right = right;
-	this->bottom = bottom;
-	this->left = left;
+	std::cout << "You have entered the: " << nameOfRoom << std::endl;
+	std::cout << "You have see two chests in the room: " << std::endl;
+	std::cout << std::endl;
+
+
+	std::cout << "**********" << nameOfRoom << "********* " << std::endl;
+	std::cout << "--------------------------------------------- " << std::endl;
+	std::cout << "|                                           |" << std::endl;
+	std::cout << "|                1         2                |" << std::endl;
+	std::cout << "|               [?]       [?]               |" << std::endl;
+	std::cout << "|                                           |" << std::endl;
+	std::cout << "|                    (O)                    |" << std::endl;
+	std::cout << "|                   --|--                   |" << std::endl;
+	std::cout << "|                    / \                    |" << std::endl;
+	std::cout << "--------------------------------------------- " << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "Will you choose to open (1) chest to the left or (2) chest to the right: ";
+	int chooseItem = 0;
+	std::cin >> chooseItem;
+
+	return chooseItem;
+
+	
+
+
+}
+
+std::string Space::getItem(int i) //gets item
+{
+	return item[i - 1]; //items from vector
 }

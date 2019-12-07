@@ -12,6 +12,7 @@ Description: this the header  file for the space class objects and methods
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include <vector>
 #include "player.hpp"
 #include "character.hpp"
 
@@ -20,22 +21,25 @@ class Space
 
 protected:
 	//space pointers
-	Space* top;
-	Space* right;
-	Space* left;
-	Space* bottom;
-	Space* nextRoom;
-	Space* prevRoom;
+	Space* top = NULL;
+	Space* right = NULL;
+	Space* left = NULL;
+	Space* bottom = NULL;
+	Space* prevRoom = NULL;
+	std::string nameOfRoom = NULL;
 
-	std::string message;	
+	std::vector<std::string> item;	//items inside each room
+	
+	bool statusPlayer; //true = inside current room
 
 
 public:
 
-	void setLinkedSpace(Space*, Space*, Space*, Space*);
-
-
+	
+	int interactRoomSpace();
+	std::string getItem(int i);
 };
+
 
 
 

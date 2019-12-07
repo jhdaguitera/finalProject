@@ -1,26 +1,27 @@
 /*****************************************************************************************************
 Name: Jason Daguitera
 CS 162
-File: livingroom.hpp
+File:bedroom.hpp
 Description: this the header file for the class objects and methods
 
 ***************************************************************************************************/
 
-#ifndef LIVINGROOM_HPP
-#define LIVINGROOM_HPP
+#ifndef BEDROOM_HPP
+#define BEDROOM_HPP
 
 #include "space.hpp"
 
 
-class LivingRoom : public Space 
+class BedRoom : public Space
 {
-private:
-	
-public:
-	
-	//default constructor
-	LivingRoom();
-};
 
+private:
+
+public:
+	//default constructor
+	BedRoom();
+	
+
+};
 
 #endif

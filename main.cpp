@@ -3,68 +3,77 @@
 Name: Jason Daguitera
 CS 162
 File: main.cpp
-Description: this the main file for the He-Man Adventures games
+Description: this the main file for the Haunted House game
 
 **********************************************************************************************************************/
 
 
 #include <iostream>
-#include "menu.hpp"
+#include "bedroom.hpp"
+#include "livingroom.hpp"
+#include "kitchen.hpp"
+#include "foyer.hpp"
+#include "space.hpp"
 
 
 int main()
 {
-
 	
-		int choose = 0;
 
-		do
-		{
-			std::cout << std::endl << std::endl;
-			std::cout << "************************************* He-Man Adventures ************************************" << std::endl << std::endl;
-			std::cout << "(1) Play" << std::endl;
-			std::cout << "(2) Exit" << std::endl;
+/*
+	Space* room = new LivingRoom();
+	int whatever = room->interactWithSpace();
+	std::cout << room->getItem(whatever);*/
 
-			std::cout << "\n\nEnter your choice: ";
-			std::cin >> choose;
+	//int choose = 0;
 
-			//validate user input
-			while (std::cin.fail())
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Invalid...try again" << std::endl;
-				std::cin >> choose;
-			}
-			//validate user input
-			while (choose < 1 || choose > 2)
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Invalid...try again" << std::endl;
-				std::cin >> choose;
-			}
+	//do
+	//{
+	//	std::cout << std::endl << std::endl;
+	//	std::cout << "************************************* Haunted House Adventures ************************************" << std::endl << std::endl;
+	//	std::cout << "(1) Play" << std::endl;
+	//	std::cout << "(2) Exit" << std::endl;
 
-			if (choose == 1)
-			{
-				menu();
-			}
-			else if (choose == 2)
-			{
-				std::cout << "Play again?" << std::endl;
-				std::cout << "(1) Play" << std::endl;
-				std::cout << "(2) Exit" << std::endl;
-				std::cin >> choose;
-			}
+	//	std::cout << "\n\nEnter your choice: ";
+	//	std::cin >> choose;
+
+	//	//validate user input
+	//	while (std::cin.fail())
+	//	{
+	//		std::cin.clear();
+	//		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	//		std::cout << "Invalid...try again" << std::endl;
+	//		std::cin >> choose;
+	//	}
+	//	//validate user input
+	//	while (choose < 1 || choose > 2)
+	//	{
+	//		std::cin.clear();
+	//		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	//		std::cout << "Invalid...try again" << std::endl;
+	//		std::cin >> choose;
+	//	}
+
+	//	if (choose == 1)
+	//	{
+	//		menu();
+	//	}
+	//	else if (choose == 2)
+	//	{
+	//		std::cout << "Play again?" << std::endl;
+	//		std::cout << "(1) Play" << std::endl;
+	//		std::cout << "(2) Exit" << std::endl;
+	//		std::cin >> choose;
+	//	}
 
 
-		} while (choose == 1);
+	//} while (choose == 1);
 
 
-		std::cout << "you quit" << std::endl;
+	//std::cout << "you quit" << std::endl;
 
 
-		return 0;
+	return 0;
 
 
 }

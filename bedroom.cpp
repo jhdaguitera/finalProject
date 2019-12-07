@@ -1,17 +1,16 @@
 /*****************************************************************************************************
 Name: Jason Daguitera
 CS 162
-File: livingroom.cpp
+File:bedroom.cpp
 Description: this the implementation file for the class objects and methods
 
 ***************************************************************************************************/
+#include<iostream>
+#include "bedroom.hpp"
 
+//implementation file not used
 
-#include <iostream>
-#include "livingroom.hpp"
-
-
-LivingRoom::LivingRoom()
+BedRoom::BedRoom()
 {
 	//space pointers
 	top = NULL;
@@ -19,19 +18,14 @@ LivingRoom::LivingRoom()
 	left = NULL;
 	bottom = NULL;
 	prevRoom = NULL;
-	nameOfRoom = "Living Room";
+	nameOfRoom = "Bed Room";
 
 	item;	//items inside each room
-	item.push_back("sticky note"); //chest 1
-	item.push_back("vitamin pills"); //chest 2
+	item.push_back("item1"); //box one
+	item.push_back("empty"); //empty
 
 	statusPlayer = true; //true = inside current room
-
-	   	 	
 }
-
-
-
 
 
 
