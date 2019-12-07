@@ -35,9 +35,16 @@ protected:
 
 public:
 
+	Space* getTop();
+	Space* getLeft();
+	Space* getRight();
+	Space* getBottom();
 	
 	int interactRoomSpace();
 	std::string getItem(int i);
+
+
+
 };
 
 

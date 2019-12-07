@@ -44,3 +44,25 @@ std::string Space::getItem(int i) //gets item
 {
 	return item[i - 1]; //items from vector
 }
+
+
+Space* Space::getTop()
+{
+	return top;
+
+}
+
+
+Space* Space::getLeft()
+{
+	return left;
+}
+
+Space* Space::getRight()
+{
+	return right;
+}
+Space* Space::getBottom() 
+{
+	return bottom;
+}

@@ -14,6 +14,7 @@ description: this the file for header of class objects and methods
 #include <cstdlib>
 #include <string>
 
+
 class Player : public Character
 {
 
@@ -23,6 +24,7 @@ private:
 //	int key;
 //	int coin;
 //	
+	s
 public:
 //	//default constructor
 //	Player();
