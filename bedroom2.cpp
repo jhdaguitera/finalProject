@@ -19,7 +19,7 @@ BedRoom2::BedRoom2()
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+	
 	nameOfRoom = "Bed Room 2";
 
 	item;	//items inside each room

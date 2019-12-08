@@ -20,7 +20,7 @@ Foyer::Foyer()
 		right = NULL;
 		left = NULL;
 		bottom = NULL;
-		prevRoom = NULL;
+		
 		nameOfRoom = "Foyer";
 
 		item;	//items inside each room

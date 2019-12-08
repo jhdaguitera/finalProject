@@ -19,7 +19,7 @@ BathRoom::BathRoom()
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+	
 	nameOfRoom = "Bath Room";
 
 	item;	//items inside each room

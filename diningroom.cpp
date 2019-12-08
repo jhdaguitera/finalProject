@@ -19,7 +19,7 @@ DiningRoom::DiningRoom()
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+	
 	nameOfRoom = "Dining Room";
 
 	item;	//items inside each room

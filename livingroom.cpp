@@ -22,7 +22,7 @@ LivingRoom::LivingRoom()
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+	
 	nameOfRoom = "Living Room";
 
 	item;	//items inside each room

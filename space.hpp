@@ -25,7 +25,7 @@ protected:
 	Space* right = NULL;
 	Space* left = NULL;
 	Space* bottom = NULL;
-	Space* prevRoom = NULL;
+	
 	std::string nameOfRoom = NULL;
 
 	std::vector<std::string> item;	//items inside each room

@@ -10,7 +10,7 @@ Description: this the implementation file for the class objects and methods
 #include<string>
 #include "bedroom1.hpp"
 
-//implementation file not used
+
 
 BedRoom_1::BedRoom_1()
 {
@@ -19,7 +19,7 @@ BedRoom_1::BedRoom_1()
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+	
 	nameOfRoom = "Bed Room 2";
 
 	item;	//items inside each room

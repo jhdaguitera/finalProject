@@ -19,7 +19,7 @@ Kitchen::Kitchen()
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+	
 	nameOfRoom = "Kitchen";
 
 	item;	//items inside each room

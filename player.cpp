@@ -37,11 +37,6 @@
 //	
 //}
 //
-//int Player::getPotion()
-//{
-//	return potion;
-//}
-//
 //
 //int Player::getKey()
 //{
@@ -49,10 +44,6 @@
 //}
 //
 //
-//int Player::getCoin()
-//{
-//	return coin;
-//}
 //
 //
 //
@@ -69,7 +60,7 @@
 //
 //***********************************************************************************************************/
 ////recovers 20% life for winner of battle
-//int Player::recoveryPotion()
+//int Player::recovery()
 //{
 //	strength = strength + (strength * 0.20);
 //	return strength;
