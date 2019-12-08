@@ -24,9 +24,9 @@ public:
 	//method to open door - will need a key
 	void doorFront(bool key);
 
-	std::string getTypeRoom();
+	std::string getType();
 	
-	}
+
 };
 
 #endif

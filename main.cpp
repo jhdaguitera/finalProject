@@ -9,13 +9,16 @@ Description: this the main file for the Haunted House game
 
 
 #include <iostream>
+#include "space.hpp"
 #include "bedroom1.hpp"
 #include "bedroom2.hpp"
 #include "bathroom.hpp"
 #include "livingroom.hpp"
 #include "kitchen.hpp"
 #include "foyer.hpp"
-#include "space.hpp"
+#include "gameplay.hpp"
+#include "diningroom.hpp"
+#include "foyer.hpp"
 
 
 int main()

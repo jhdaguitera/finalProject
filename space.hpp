@@ -40,9 +40,10 @@ public:
 	Space* getRight();
 	Space* getBottom();
 	
-	int interactRoomSpace();
+	int roomMenu();
 	std::string getItem(int i);
 
+	std::string getType();
 
 
 };

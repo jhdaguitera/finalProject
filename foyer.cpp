@@ -30,7 +30,7 @@ Foyer::Foyer()
 }
 
 //getter
-std::string Foyer::getTypeRoom()
+std::string Foyer::getType()
 {
 	return nameOfRoom;
 }

@@ -13,6 +13,8 @@ Description: this the implementation file for the class objects and methods
 
 LivingRoom::LivingRoom()
 {
+
+
 	//space pointers
 	top = NULL;
 	right = NULL;
@@ -27,9 +29,13 @@ LivingRoom::LivingRoom()
 
 	statusPlayer = true; //true = inside current room
 
-	   	 	
 }
 
+
+std::string LivingRoom::getTypeRoom()
+{
+	return nameOfRoom;
+}
 
 
 

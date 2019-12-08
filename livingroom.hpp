@@ -20,6 +20,7 @@ public:
 	
 	//default constructor
 	LivingRoom();
+	std::string getTypeRoom();
 };
 
 

@@ -24,7 +24,7 @@ private:
 //	int key;
 //	int coin;
 //	
-	s
+	
 public:
 //	//default constructor
 //	Player();

@@ -8,7 +8,7 @@ Description: this the implementation file for the class objects and methods
 #include<iostream>
 #include "bedroom1.hpp"
 
-//implementation file not used
+
 
 BedRoom1::BedRoom1()
 {

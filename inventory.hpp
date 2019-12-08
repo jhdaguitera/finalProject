@@ -14,7 +14,7 @@ public:
 	Space* backPackInventory()
 	{
 		Space* backPack = new BackPack;
-		int interact = backPack->interactRoomSpace();
+		int interact = backPack->roomMenu();
 
 
 

@@ -18,7 +18,7 @@ BedRoom2::BedRoom2()
 	left = NULL;
 	bottom = NULL;
 	prevRoom = NULL;
-	nameOfRoom = "Bed Room 1";
+	nameOfRoom = "Bed Room 2";
 
 	item;	//items inside each room
 	item.push_back("note2"); //box one
