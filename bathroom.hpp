@@ -20,7 +20,7 @@ private:
 public:
 	//default constructor
 	BathRoom();
-
+	std::string getType();
 
 };
 

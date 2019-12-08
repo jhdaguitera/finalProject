@@ -12,12 +12,13 @@ Description: this the implementation file for the class objects and methods
 
 BedRoom1::BedRoom1()
 {
+	
 	//space pointers
 	top = NULL;
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+	
 	nameOfRoom = "Bed Room 1";
 
 	item;	//items inside each room
@@ -30,3 +31,8 @@ BedRoom1::BedRoom1()
 
 
 
+//getter
+std::string BedRoom1::getType()
+{
+	return nameOfRoom;
+}

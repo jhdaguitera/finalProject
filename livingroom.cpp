@@ -32,7 +32,7 @@ LivingRoom::LivingRoom()
 }
 
 
-std::string LivingRoom::getTypeRoom()
+std::string LivingRoom::getType()
 {
 	return nameOfRoom;
 }

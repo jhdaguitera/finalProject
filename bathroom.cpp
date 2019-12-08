@@ -30,3 +30,8 @@ BathRoom::BathRoom()
 
 
 
+//getter
+std::string BathRoom::getType()
+{
+	return nameOfRoom;
+}

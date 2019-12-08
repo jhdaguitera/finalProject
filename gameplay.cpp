@@ -15,7 +15,7 @@ Description: this the implementation file for the class objects and methods
 #include "foyer.hpp"
 #include "gameplay.hpp"
 #include "diningroom.hpp"
-#include "foyer.hpp"
+
 
 //default constructor
 GamePlay::GamePlay()
@@ -97,8 +97,9 @@ foyerMoveTo() method
 
 int GamePlay::foyerMoveTo()
 {
+	GamePlay();
 
-	Space* current = new Foyer(); //initally start at foyer
+	Space* current = foyer; //initally start at foyer
 	current->roomMenu(); //prints menu for user
 
 	//add spme stuff for interaction and back pack			
@@ -138,8 +139,8 @@ livingRoomMoveTo() method
 
 int GamePlay::livingRoomMoveTo()
 {
-
-	Space* current = new LivingRoom(); 
+	GamePlay();
+	Space* current = livingRoom; 
 	current->roomMenu(); //prints menu for user
 
 	//add spme stuff for interaction and back pack			
@@ -183,8 +184,8 @@ bedRoom1MoveTo() method
 
 int GamePlay::bedRoom1MoveTo()
 {
-
-	Space* current = new BedRoom1(); 
+	GamePlay();
+	Space* current = bedRoom1;
 	current->roomMenu(); //prints menu for user
 
 	//add spme stuff for interaction and back pack			
@@ -229,8 +230,8 @@ bedRoom1MoveTo() method
 
 int GamePlay::bathRoomMoveTo()
 {
-
-	Space* current = new BathRoom();
+	GamePlay();
+	Space* current = bathRoom;
 	current->roomMenu(); //prints menu for user
 
 	//add spme stuff for interaction and back pack			
@@ -275,8 +276,8 @@ kitchenMoveTo() method
 
 int GamePlay::kitchenMoveTo()
 {
-
-	Space* current = new Kitchen();
+	GamePlay();
+	Space* current = kitchen;
 	current->roomMenu(); //prints menu for user
 
 	//add spme stuff for interaction and back pack			
@@ -319,8 +320,8 @@ diningMoveTo() method
 
 int GamePlay::diningRoomMoveTo()
 {
-
-	Space* current = new DiningRoom();
+	GamePlay();
+	Space* current = diningRoom;
 	current->roomMenu(); //prints menu for user
 
 	//add spme stuff for interaction and back pack			
@@ -364,8 +365,8 @@ bedRoom2MoveTo() method
 
 int GamePlay::bedRoom2MoveTo()
 {
-
-	Space* current = new BedRoom2();
+	GamePlay();
+	Space* current = bedRoom2;
 	current->roomMenu(); //prints menu for user
 
 	//add spme stuff for interaction and back pack			

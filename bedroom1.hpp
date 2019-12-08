@@ -19,8 +19,8 @@ private:
 
 public:
 	//default constructor
-	BedRoom1();
-	
+
+	std::string getType();
 
 };
 

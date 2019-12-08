@@ -30,3 +30,8 @@ BedRoom2::BedRoom2()
 
 
 
+//getter
+std::string BedRoom2::getType()
+{
+	return nameOfRoom;
+}

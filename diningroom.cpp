@@ -30,3 +30,8 @@ DiningRoom::DiningRoom()
 
 
 
+//getter
+std::string DiningRoom::getType()
+{
+	return nameOfRoom;
+}

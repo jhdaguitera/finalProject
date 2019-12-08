@@ -23,8 +23,8 @@ public:
 	DiningRoom();
 
 
-	std::string getTypeRoom();
-
+	
+	std::string getType();
 
 };
 

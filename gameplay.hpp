@@ -17,7 +17,7 @@ Description: this the header file for the class objects and methods
 #include "kitchen.hpp"
 #include "foyer.hpp"
 #include "diningroom.hpp"
-#include "foyer.hpp"
+
 
 class GamePlay
 {
