@@ -12,7 +12,7 @@ Description: this the implementation file for the class objects and methods
 
 //implementation file not used
 
-BedRoom_2::BedRoom_2()
+BedRoom2::BedRoom2()
 {
 	//space pointers
 	top = NULL;
@@ -33,7 +33,7 @@ BedRoom_2::BedRoom_2()
 
 
 //getter
-std::string BedRoom_2::getType()
+std::string BedRoom2::getType()
 {
 	return nameOfRoom;
 }

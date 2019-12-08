@@ -23,7 +23,7 @@ GamePlay::GamePlay()
 	foyer = new Foyer();
 	livingRoom = new LivingRoom();
 	bedRoom1 = new BedRoom_1();
-	bedRoom2 = new BedRoom_2();
+	bedRoom2 = new BedRoom2();
 	kitchen = new Kitchen();
 	bathRoom = new BathRoom();
 	diningRoom = new DiningRoom();
@@ -113,6 +113,7 @@ int GamePlay::foyerMoveTo()
 	if (chooseDirection == 1)
 	{
 		current = current->getLeft();
+		current = livingRoom;
 		std::cout << current->getType();		
 	}
 	else if (chooseDirection == 2)
@@ -153,21 +154,25 @@ int GamePlay::livingRoomMoveTo()
 	if (chooseDirection == 1)
 	{
 		current = current->getLeft();
+		current = foyer;
 		std::cout << current->getType();
 	}
 	else if (chooseDirection == 2)
 	{
 		current = current->getTop();
+		current = bedRoom1;
 		std::cout << current->getType();
 	}
 	else if (chooseDirection == 3)
 	{
 		current = current->getRight();
+		current = kitchen;
 		std::cout << current->getType();
 	}
 	else if (chooseDirection == 4)
 	{
 		current = current->getBottom();
+		current = bathRoom;
 		std::cout << current->getType();
 	}
 
@@ -198,22 +203,24 @@ int GamePlay::bedRoom1MoveTo()
 	if (chooseDirection == 1)
 	{
 		current = current->getLeft();
-		std::cout<< current->getType();
+		
+		std::cout << "No room exists" << std::endl;
 
 	}
 	else if (chooseDirection == 2)
 	{
 		current = current->getTop();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 3)
 	{
 		current = current->getRight();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 4)
 	{
 		current = current->getBottom();
+		current = livingRoom;
 		std::cout << current->getType();
 	}
 
@@ -244,22 +251,22 @@ int GamePlay::bathRoomMoveTo()
 	if (chooseDirection == 1)
 	{
 		current = current->getLeft();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 2)
 	{
 		current = current->getTop();
-		std::cout << current->getType();
+		current = livingRoom;
 	}
 	else if (chooseDirection == 3)
 	{
 		current = current->getRight();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 4)
 	{
 		current = current->getBottom();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 
 	return chooseDirection;
@@ -290,22 +297,25 @@ int GamePlay::kitchenMoveTo()
 	if (chooseDirection == 1)
 	{
 		current = current->getLeft();
+		current = livingRoom;
 		std::cout << current->getType();
 	}
 	else if (chooseDirection == 2)
 	{
 		current = current->getTop();
+		current = diningRoom;
 		std::cout << current->getType();
 	}
 	else if (chooseDirection == 3)
 	{
 		current = current->getRight();
+		current = bedRoom2;
 		std::cout << current->getType();
 	}
 	else if (chooseDirection == 4)
 	{
 		current = current->getBottom();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 
 	return chooseDirection;
@@ -333,21 +343,22 @@ int GamePlay::diningRoomMoveTo()
 	if (chooseDirection == 1)
 	{
 		current = current->getLeft();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 2)
 	{
 		current = current->getTop();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 3)
 	{
 		current = current->getRight();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 4)
 	{
 		current = current->getBottom();
+		current = kitchen;
 		std::cout << current->getType();
 	}
 
@@ -378,22 +389,23 @@ int GamePlay::bedRoom2MoveTo()
 	if (chooseDirection == 1)
 	{
 		current = current->getLeft();
+		current = kitchen;
 		std::cout << current->getType();
 	}
 	else if (chooseDirection == 2)
 	{
 		current = current->getTop();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 3)
 	{
 		current = current->getRight();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 	else if (chooseDirection == 4)
 	{
 		current = current->getBottom();
-		std::cout << current->getType();
+		std::cout << "No room exists" << std::endl;
 	}
 
 	return chooseDirection;

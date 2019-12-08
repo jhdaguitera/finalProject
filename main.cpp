@@ -26,9 +26,8 @@ int main()
 	
 	std::cout<<"test";
 
-	Space* room = new LivingRoom();
-	int whatever = room->roomMenu();
-	std::cout << room->getItem(whatever);
+	GamePlay g;
+	g.bathRoomMoveTo();
 
 	//int choose = 0;
 
