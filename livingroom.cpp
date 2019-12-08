@@ -8,6 +8,8 @@ Description: this the implementation file for the class objects and methods
 
 
 #include <iostream>
+#include<vector>
+#include<string>
 #include "livingroom.hpp"
 
 

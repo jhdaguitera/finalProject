@@ -6,11 +6,13 @@ Description: this the implementation file for the class objects and methods
 
 ***************************************************************************************************/
 #include<iostream>
+#include<vector>
+#include<string>
 #include "bedroom2.hpp"
 
 //implementation file not used
 
-BedRoom2::BedRoom2()
+BedRoom_2::BedRoom_2()
 {
 	//space pointers
 	top = NULL;
@@ -31,7 +33,7 @@ BedRoom2::BedRoom2()
 
 
 //getter
-std::string BedRoom2::getType()
+std::string BedRoom_2::getType()
 {
 	return nameOfRoom;
 }

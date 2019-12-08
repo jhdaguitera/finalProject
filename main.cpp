@@ -24,11 +24,11 @@ Description: this the main file for the Haunted House game
 int main()
 {
 	
+	std::cout<<"test";
 
-/*
 	Space* room = new LivingRoom();
-	int whatever = room->interactWithSpace();
-	std::cout << room->getItem(whatever);*/
+	int whatever = room->roomMenu();
+	std::cout << room->getItem(whatever);
 
 	//int choose = 0;
 

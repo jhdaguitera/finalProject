@@ -1,7 +1,7 @@
 /*****************************************************************************************************
 Name: Jason Daguitera
 CS 162
-File:bedroom1.hpp
+File:bedroom.hpp
 Description: this the header file for the class objects and methods
 
 ***************************************************************************************************/
@@ -12,14 +12,14 @@ Description: this the header file for the class objects and methods
 #include "space.hpp"
 
 
-class BedRoom1 : public Space
+class BedRoom_1 : public Space
 {
 
 private:
 
 public:
 	//default constructor
-
+	BedRoom_1();
 	std::string getType();
 
 };

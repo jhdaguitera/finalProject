@@ -12,14 +12,14 @@ Description: this the header file for the class objects and methods
 #include "space.hpp"
 
 
-class BedRoom2 : public Space
+class BedRoom_2 : public Space
 {
 
 private:
 
 public:
 	//default constructor
-	BedRoom2();
+	BedRoom_2();
 	std::string getType();
 
 };

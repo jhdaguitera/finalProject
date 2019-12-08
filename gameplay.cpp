@@ -22,8 +22,8 @@ GamePlay::GamePlay()
 {
 	foyer = new Foyer();
 	livingRoom = new LivingRoom();
-	bedRoom1 = new BedRoom1();
-	bedRoom2 = new BedRoom2();
+	bedRoom1 = new BedRoom_1();
+	bedRoom2 = new BedRoom_2();
 	kitchen = new Kitchen();
 	bathRoom = new BathRoom();
 	diningRoom = new DiningRoom();
@@ -97,7 +97,6 @@ foyerMoveTo() method
 
 int GamePlay::foyerMoveTo()
 {
-	GamePlay();
 
 	Space* current = foyer; //initally start at foyer
 	current->roomMenu(); //prints menu for user
@@ -139,7 +138,6 @@ livingRoomMoveTo() method
 
 int GamePlay::livingRoomMoveTo()
 {
-	GamePlay();
 	Space* current = livingRoom; 
 	current->roomMenu(); //prints menu for user
 
@@ -184,7 +182,7 @@ bedRoom1MoveTo() method
 
 int GamePlay::bedRoom1MoveTo()
 {
-	GamePlay();
+
 	Space* current = bedRoom1;
 	current->roomMenu(); //prints menu for user
 
@@ -230,7 +228,7 @@ bedRoom1MoveTo() method
 
 int GamePlay::bathRoomMoveTo()
 {
-	GamePlay();
+	
 	Space* current = bathRoom;
 	current->roomMenu(); //prints menu for user
 
@@ -276,7 +274,7 @@ kitchenMoveTo() method
 
 int GamePlay::kitchenMoveTo()
 {
-	GamePlay();
+	
 	Space* current = kitchen;
 	current->roomMenu(); //prints menu for user
 
@@ -320,7 +318,6 @@ diningMoveTo() method
 
 int GamePlay::diningRoomMoveTo()
 {
-	GamePlay();
 	Space* current = diningRoom;
 	current->roomMenu(); //prints menu for user
 
@@ -365,7 +362,7 @@ bedRoom2MoveTo() method
 
 int GamePlay::bedRoom2MoveTo()
 {
-	GamePlay();
+	
 	Space* current = bedRoom2;
 	current->roomMenu(); //prints menu for user
 

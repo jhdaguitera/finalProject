@@ -6,23 +6,24 @@ Description: this the implementation file for the class objects and methods
 
 ***************************************************************************************************/
 #include<iostream>
+#include<vector>
+#include<string>
 #include "bedroom1.hpp"
 
+//implementation file not used
 
-
-BedRoom1::BedRoom1()
+BedRoom_1::BedRoom_1()
 {
-	
 	//space pointers
 	top = NULL;
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	
-	nameOfRoom = "Bed Room 1";
+	prevRoom = NULL;
+	nameOfRoom = "Bed Room 2";
 
 	item;	//items inside each room
-	item.push_back("item1"); //box one
+	item.push_back("note2"); //box one
 	item.push_back("empty"); //empty
 
 	statusPlayer = true; //true = inside current room
@@ -32,7 +33,7 @@ BedRoom1::BedRoom1()
 
 
 //getter
-std::string BedRoom1::getType()
+std::string BedRoom_1::getType()
 {
 	return nameOfRoom;
 }
