@@ -39,6 +39,7 @@ private:
 public:
 	//default constructor
 	GamePlay();
+	
 
 	/*Space* enterLivingRoom();
 	Space* enterBedRoom1();

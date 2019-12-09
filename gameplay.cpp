@@ -30,6 +30,8 @@ GamePlay::GamePlay()
 
 	linkedSpace(); //called to connect the spaces
 
+	
+
 }
 
 

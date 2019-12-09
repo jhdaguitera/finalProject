@@ -21,12 +21,12 @@ class Space
 
 protected:
 	//space pointers
-	Space* top = NULL;
-	Space* right = NULL;
-	Space* left = NULL;
-	Space* bottom = NULL;
+	Space* top;
+	Space* right;
+	Space* left;
+	Space* bottom;
 	
-	std::string nameOfRoom = NULL;
+	std::string nameOfRoom;
 
 	std::vector<std::string> item;	//items inside each room
 	
