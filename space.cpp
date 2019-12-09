@@ -34,10 +34,6 @@ int Space::roomMenu()  //gives options for user to interact with space
 	std::cin >> chooseItem;
 
 	return chooseItem;
-
-	
-
-
 }
 
 std::string Space::getItem(int i) //gets item

@@ -150,21 +150,22 @@ void GamePlay::gameOn()
 	int steps = 10; //game steps
 	while (steps > 0)
 	{
-
-		current->roomMenu(); //current room accesses menu for use
+		std::cout <<"step: " <<steps<< std::endl;
+		//current room accesses menu for use
 
 		int itemReceived = current->roomMenu();
-		std::cout << current->getItem(itemReceived);
+		//std::cout << current->getItem(itemReceived);
 
 		//current spaces defined as current room accessing pointer directions
 		Space* top = current->getTop();
 		Space* right = current->getRight();
 		Space* left = current->getLeft();
 		Space* bottom = current->getBottom();
+		
+	
 
 
-
-		if (left != NULL)
+		if ((left) != NULL)
 		{
 			std::cout << "The room on right is: " << left->getType() << std::endl;
 			std::cout << "Would you like to enter the number (1) to move " << std::endl;
@@ -176,9 +177,10 @@ void GamePlay::gameOn()
 			std::cout << "The room on top is: " << top->getType() << std::endl;
 			std::cout << "Would you like to enter the number (2) to move " << std::endl;
 		}
-
-		if (right != NULL)
+		std::cout << "print test";
+		if (current->getRight() != NULL)
 		{
+			std::cout << "print test";
 			std::cout << "The room on right is: " << right->getType() << std::endl;
 			std::cout << "Would you like to enter the number (3) to move " << std::endl;
 		}
@@ -190,13 +192,13 @@ void GamePlay::gameOn()
 			std::cout << "Would you like to enter the number (4) to move " << std::endl;
 		}
 
-
+		
 		int chooseDirection = 0;
 		std::cin >> chooseDirection;
 
 		
 
-
+		steps--;
 	}
 
 
