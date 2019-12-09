@@ -1,11 +1,14 @@
 /*****************************************************************************************************
-Name: Jason Daguitera
-CS 162
-File: gameplay.cpp
-Description: this the implementation file for the class objects and methods
+ Name: Jason Daguitera
+ CS 162
+ File: gameplay.cpp
+ Description: this the implementation file for the class objects and methods
 
-***************************************************************************************************/
+ ***************************************************************************************************/
 #include <iostream>
+#include <cstdlib>
+#include <string>
+
 #include "space.hpp"
 #include "bedroom1.hpp"
 #include "bedroom2.hpp"
@@ -18,8 +21,7 @@ Description: this the implementation file for the class objects and methods
 
 
 //default constructor
-GamePlay::GamePlay()
-{
+GamePlay::GamePlay() {
 	foyer = new Foyer();
 	livingRoom = new LivingRoom();
 	bedRoom1 = new BedRoom_1();
@@ -30,208 +32,162 @@ GamePlay::GamePlay()
 
 	linkedSpace(); //called to connect the spaces
 
-	
-
 }
 
-
 /*****************************************************************************************************************
-linkedSpace() method
-*****************************************************************************************************************/
+ linkedSpace() method
+ *****************************************************************************************************************/
 //links all the spaces
 void GamePlay::linkedSpace()
 {
-	Space* connector; //pointer that links up the adjacent rooms
-
 	//foyer linked spaces
-	connector = foyer->getRight();
-	connector = livingRoom;
-
+	foyer->setRight(livingRoom);
 
 	//living room linked spaces
-	connector = livingRoom->getTop();
-	connector = bedRoom1;
+	livingRoom->setTop(bedRoom1);
+	livingRoom->setBottom(bathRoom);
+	livingRoom->setLeft(foyer);
+	livingRoom->setRight(kitchen);
 
-	connector = livingRoom->getBottom();
-	connector = bathRoom;
-
-	connector = livingRoom->getLeft();
-	connector = foyer;
-
-	connector = livingRoom->getRight();
-	connector = kitchen;
-
-
-	//bedroom 1 linked spaces
-	connector = bedRoom1->getBottom();
-	connector = livingRoom;
-
+	//bedroom1 linked spaces
+	bedRoom1->setBottom(livingRoom);
 
 	//bathroom linked spaces
-	connector = bathRoom->getTop();
-	connector = livingRoom;
-
+	bathRoom->setTop(livingRoom);
 
 	//kitchen linked spaces
-	connector = kitchen->getLeft();
-	connector = livingRoom;
+	kitchen->setLeft(livingRoom);
+	kitchen->setRight(bedRoom2);
+	kitchen->setTop(diningRoom);
 
-	connector = kitchen->getRight();
-	connector = bedRoom2;
-
-	connector = kitchen->getTop();
-	connector = diningRoom;
-
-
-	//bedroom 2 linked spaces	
-	connector = bedRoom2->getLeft();
-	connector = kitchen;
+	//bedroom2 linked spaces	
+	bedRoom2->setLeft(kitchen);
 
 	//dining room linked spaces
-	connector = diningRoom->getBottom();
-	connector = kitchen;
-
+	diningRoom->setBottom(kitchen);
 }
-//
-///*****************************************************************************************************************
-//foyerMoveTo() method
-//*****************************************************************************************************************/
-//
-//int GamePlay::foyerMoveTo()
-//{
-//
-//	Space* current = foyer; //initally start at foyer
-//	current->roomMenu(); //prints menu for user
-//
-//	//add spme stuff for interaction and back pack			
-//	int itemReceived = current->roomMenu();
-//	std::cout << current->getItem(itemReceived);
-//
-//
-//	std::cout << "Choose next room space to enter: (1) left, (2) up , (3) right, or (4) down: " << std::endl;
-//	int chooseDirection = 0;
-//	std::cin >> chooseDirection;
-//
-//	if (chooseDirection == 1)
-//	{
-//		current = current->getLeft();
-//		current = livingRoom;
-//		std::cout << current->getType();		
-//	}
-//	else if (chooseDirection == 2)
-//	{
-//		std::cout << "No room exists " << std::endl;
-//	}
-//	else if (chooseDirection == 3)
-//	{
-//		std::cout << "No room exists " << std::endl;
-//	}
-//	else if (chooseDirection == 4)
-//	{
-//		std::cout << "No room exists " << std::endl;
-//	}
-//
-//	return chooseDirection;
-//}
-//
-//
+
 
 
 /*****************************************************************************************************************
-gameOn() method
-*****************************************************************************************************************/
+ gameOn() method
+ *****************************************************************************************************************/
 
 void GamePlay::gameOn()
 {
 
-	Space* current = foyer; //where player starts initially 
-
+	Space *current = foyer; //where player starts initially in the game
 
 	int steps = 10; //game steps
 	while (steps > 0)
 	{
-		std::cout <<"step: " <<steps<< std::endl;
+		std::cout << "step: " << steps << std::endl;
 		//current room accesses menu for use
 
 		int itemReceived = current->roomMenu();
-		//std::cout << current->getItem(itemReceived);
 
-		//current spaces defined as current room accessing pointer directions
-		Space* top = current->getTop();
-		Space* right = current->getRight();
-		Space* left = current->getLeft();
-		Space* bottom = current->getBottom();
-		
-		//testing - someting wrong with the direction pointers
-		//std::cout<< current->getType();
-		//std::cout << current->getTop();
-		//std::cout << current->getLeft();
-		//std::cout << current->getRight();
-		//std::cout << current->getBottom();
+		//current room defined as current room pointing to next room
+		Space *top = current->getTop();
+		Space *right = current->getRight();
+		Space *left = current->getLeft();
+		Space *bottom = current->getBottom();
 
-		if (left != NULL)
+
+		std::cout << "You are currently in " << current->getType() << ". Enter choice of where to move next: " << std::endl;
+
+		if (left !=NULL)
 		{
-			std::cout << "The room on right is: " << left->getType() << std::endl;
-			std::cout << "Would you like to enter the number (1) to move " << std::endl;
+			std::cout << "(1)LEFT: " << left->getType() << std::endl;
 		}
 
-
-		if (top != NULL)
+		if (top !=NULL)
 		{
-			std::cout << "The room on top is: " << top->getType() << std::endl;
-			std::cout << "Would you like to enter the number (2) to move " << std::endl;
-		}
-		
-		if (right != NULL)
-		{
-			
-			std::cout << "The room on right is: " << right->getType() << std::endl;
-			std::cout << "Would you like to enter the number (3) to move " << std::endl;
-		}
-		
-
-		if (bottom != NULL)
-		{
-			std::cout << "The room on bottom is: " << bottom->getType() << std::endl;
-			std::cout << "Would you like to enter the number (4) to move " << std::endl;
+			std::cout << "(2)TOP: " << top->getType() << std::endl;
 		}
 
-		
+		if (right !=NULL)
+		{
+			std::cout << "(3)RIGHT: " << right->getType() << std::endl;		
+		}
+
+		if (bottom != NULL) {
+			std::cout << "(4)BOTTOM: " << bottom->getType() << std::endl;
+		}
+
+		std::cout << std::endl;
 		int chooseDirection = 0;
+		std::cout << "choice: ";
 		std::cin >> chooseDirection;
-	
 
 
-		//*******************************************
+		//clears previous screen
+		system("CLS");
+
+
+
+		/**************************************/
+				
+		std::cout << std::endl;
+				
 		if (chooseDirection == 1)
 		{
-			current = left;
-			std::cout << "You now entered: " << left->getType() << std::endl;
+			current = current->getLeft();			
+			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
 
 		if (chooseDirection == 2)
 		{
-			current = top;
-			std::cout << "You now entered: " << left->getTop() << std::endl;
+			current = current->getTop();			
+			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
 
 		if (chooseDirection == 3)
 		{
-			current = right;
-			std::cout << "You now entered: " << left->getRight() << std::endl;
+			current = current->getRight();			
+			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
-
 
 		if (chooseDirection == 4)
 		{
-			current = bottom;
-			std::cout << "You now entered: " << left->getBottom() << std::endl;
+			current = current->getBottom();		
+			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
 
+
+		//counter
 		steps--;
 	}
+}
 
+/*
+
+void GamePlay::printRooms()
+{
+	Space *current = foyer;
+
+	
+	while (current) 
+	{
+		std::cout << current->getType() << std::endl;
+		current = current->getRight();
+	}
+
+	current = bedRoom2;
+	while (current)
+	{
+		std::cout << current->getType() << std::endl;
+		current = current->getLeft();
+	}
+
+	current = livingRoom->getTop();
+	std::cout << current->getType() << std::endl;
+
+	current = livingRoom->getBottom();
+	std::cout << current->getType() << std::endl;
+
+	current = kitchen->getTop();
+	std::cout << current->getType() << std::endl;
 
 }
 
-
+*/

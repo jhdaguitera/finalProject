@@ -15,14 +15,10 @@ class Foyer : public Space
 {
 
 private:
-	bool key;
 
 public:
 	//default constructor
 	Foyer();
-
-	//method to open door - will need a key
-	void doorFront(bool key);
 
 	std::string getType();
 	

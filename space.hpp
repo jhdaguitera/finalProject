@@ -1,10 +1,10 @@
 /*****************************************************************************************************
-Name: Jason Daguitera
-CS 162
-File: space.hpp
-Description: this the header  file for the space class objects and methods
+ Name: Jason Daguitera
+ CS 162
+ File: space.hpp
+ Description: this the header  file for the space class objects and methods
 
-****************************************************************************************************/
+ ****************************************************************************************************/
 #ifndef SPACE_HPP
 #define SPACE_HPP
 
@@ -16,39 +16,41 @@ Description: this the header  file for the space class objects and methods
 #include "player.hpp"
 #include "character.hpp"
 
-class Space
-{
+class Space {
 
 protected:
 	//space pointers
-	Space* top;
-	Space* right;
-	Space* left;
-	Space* bottom;
-	
-	std::string nameOfRoom;
+	Space *top;
+	Space *right;
+	Space *left;
+	Space *bottom;
 
+	std::string nameOfRoom;
 	std::vector<std::string> item;	//items inside each room
-	
 	bool statusPlayer; //true = inside current room
 
-
 public:
-
+	//getters
 	Space* getTop();
 	Space* getLeft();
 	Space* getRight();
 	Space* getBottom();
-	
-	int roomMenu();
-	std::string getItem(int i);
 
+	std::string getItem(int i);
 	std::string getType();
+
+	//setters
+	void setRight(Space*);
+	void setLeft(Space*);
+	void setTop(Space*);
+	void setBottom(Space*);
+
+	//menu
+	int roomMenu();
+
+	
 
 
 };
-
-
-
 
 #endif 

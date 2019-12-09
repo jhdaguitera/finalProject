@@ -17,7 +17,7 @@ BedRoom::BedRoom()
 	right = NULL;
 	left = NULL;
 	bottom = NULL;
-	prevRoom = NULL;
+
 	nameOfRoom = "Bed Room";
 
 	item;	//items inside each room
