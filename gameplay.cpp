@@ -162,10 +162,14 @@ void GamePlay::gameOn()
 		Space* left = current->getLeft();
 		Space* bottom = current->getBottom();
 		
-	
+		//testing - someting wrong with the direction pointers
+		//std::cout<< current->getType();
+		//std::cout << current->getTop();
+		//std::cout << current->getLeft();
+		//std::cout << current->getRight();
+		//std::cout << current->getBottom();
 
-
-		if ((left) != NULL)
+		if (left != NULL)
 		{
 			std::cout << "The room on right is: " << left->getType() << std::endl;
 			std::cout << "Would you like to enter the number (1) to move " << std::endl;
@@ -177,14 +181,14 @@ void GamePlay::gameOn()
 			std::cout << "The room on top is: " << top->getType() << std::endl;
 			std::cout << "Would you like to enter the number (2) to move " << std::endl;
 		}
-		std::cout << "print test";
-		if (current->getRight() != NULL)
+		
+		if (right != NULL)
 		{
-			std::cout << "print test";
+			
 			std::cout << "The room on right is: " << right->getType() << std::endl;
 			std::cout << "Would you like to enter the number (3) to move " << std::endl;
 		}
-
+		
 
 		if (bottom != NULL)
 		{
@@ -195,8 +199,34 @@ void GamePlay::gameOn()
 		
 		int chooseDirection = 0;
 		std::cin >> chooseDirection;
+	
 
-		
+
+		//*******************************************
+		if (chooseDirection == 1)
+		{
+			current = left;
+			std::cout << "You now entered: " << left->getType() << std::endl;
+		}
+
+		if (chooseDirection == 2)
+		{
+			current = top;
+			std::cout << "You now entered: " << left->getTop() << std::endl;
+		}
+
+		if (chooseDirection == 3)
+		{
+			current = right;
+			std::cout << "You now entered: " << left->getRight() << std::endl;
+		}
+
+
+		if (chooseDirection == 4)
+		{
+			current = bottom;
+			std::cout << "You now entered: " << left->getBottom() << std::endl;
+		}
 
 		steps--;
 	}

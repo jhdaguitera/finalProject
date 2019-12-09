@@ -12,7 +12,7 @@ Description: this the file for implementing space class objects and methods
 
 int Space::roomMenu()  //gives options for user to interact with space
 {
-	std::cout << "You have entered the: " << nameOfRoom << std::endl;
+	
 	std::cout << "You have see two chests in the room: " << std::endl;
 	std::cout << std::endl;
 

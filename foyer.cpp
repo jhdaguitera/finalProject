@@ -30,7 +30,13 @@ Foyer::Foyer()
 		statusPlayer = true; //true = inside current room
 }
 
+
+
+
+
+
 //getter
+
 std::string Foyer::getType()
 {
 	return nameOfRoom;

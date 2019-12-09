@@ -40,27 +40,11 @@ public:
 	//default constructor
 	GamePlay();
 	
-
-	/*Space* enterLivingRoom();
-	Space* enterBedRoom1();
-	Space* enterBedRoom2();
-	Space* enterBathRoom();
-	Space* enterKitchen();
-	Space* enterFoyer();*/
-
-
 	void linkedSpace();
 
 	void gameOn();
 
-	int foyerMoveTo(); //in foyer but will move to next room user picks
-	int livingRoomMoveTo(); //in living room but will move to next room user picks
-	int bedRoom1MoveTo(); //in bedroom 1 but will move to next room user picks
-	int bathRoomMoveTo(); //in bath room but will move to next room user picks
-	int kitchenMoveTo(); //in kitchen but will move to next room user picks
-	int diningRoomMoveTo(); //in dining room but will move to next room user picks
-	int bedRoom2MoveTo(); //in bed room 2 but will move to next room user picks
-
+	
 
 
 

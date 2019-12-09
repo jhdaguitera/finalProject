@@ -26,6 +26,7 @@ public:
 
 	std::string getType();
 	
+	
 
 };
 
