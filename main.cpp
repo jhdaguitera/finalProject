@@ -23,8 +23,7 @@ int main()
 		std::cout << "Game Prompt:" << std::endl;
 		std::cout << "You wake up feeling weak and drowsy in the foyer of a strange house that feels super eery. " << std::endl;
 		std::cout << "You try to exit through front door but discover it is locked from the inside. " << std::endl;
-		std::cout << "You begin to panic...and realize you can hear faint footsteps coming from somewhere inside the house. " << std::endl;
-		std::cout << "You really need to figure how to get out of this haunted house. " << std::endl;
+		std::cout << "You goal is figure how to get out of this haunted house. " << std::endl;
 		std::cout << std::endl;
 
 		std::cout << "Would you like to explore this house? (1)yes or (2)no: ";
@@ -56,7 +55,7 @@ int main()
 		if (choose == 1)
 		{
 			//need to implement diminishing health after each step
-			std::cout << "Let's Begin...you are very weak and with each step you take drains your energy. " << std::endl;
+			std::cout << "Let's Begin...you are very weak and with each step you take drains your energy. Keep an eye on your health meter. " << std::endl;
 			std::cout << std::endl;
 
 			GamePlay play;

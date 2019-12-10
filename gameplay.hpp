@@ -41,6 +41,8 @@ public:
 	void gameOn();
 	void interaction_1();
 	void interaction_2();
+	void interaction_3();
+	void interaction_4();
 };
 
 #endif

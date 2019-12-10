@@ -97,7 +97,7 @@ int Space::roomMenu()  //gives options for user to interact with space
 
 	//chest options
 	std::cout << std::endl;
-	std::cout << "Which do you choose to open - chest (1) or chest (2): ";
+	std::cout << "\n\nWhich do you choose to open - chest (1) or chest (2): ";
 	int choose = 0;
 	std::cin >> choose;
 
@@ -121,7 +121,7 @@ int Space::roomMenu()  //gives options for user to interact with space
 	   	
 	   	 
 	//opening map
-	std::cout << "Do you want to open up the map of the house? (1)yes or (2)no: ";
+	std::cout << "\nDo you want to open up the map of the house? (1)yes or (2)no: ";
 	int openMap = 0;
 	std::cin >> openMap;
 

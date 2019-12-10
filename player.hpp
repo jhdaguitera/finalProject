@@ -35,10 +35,11 @@ public:
 
 	void addToBackPack(std::string items);
 	void removeLastItem();
-
 	void printBackPack();
-
 	double reduceHealth();
+	double reduceHealth2();	
+	double healing();
+
 
 };
 

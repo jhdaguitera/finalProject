@@ -24,7 +24,7 @@ DiningRoom::DiningRoom()
 
 	item;	//items inside each room
 	item.push_back("pain killers"); //box one
-	item.push_back("pain killers"); //empty
+	item.push_back("pain killers");
 
 	statusPlayer = true; //true = inside current room
 }

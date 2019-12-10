@@ -67,6 +67,22 @@ void Player::removeLastItem() //remove last item from backpack when encountering
 
 double Player::reduceHealth()
 {
-	strength = strength - 10; //reduction of health by 10% after each step
+	strength = strength - 10; //reduction of health by 10 points after each step
+	return strength;
+}
+
+
+
+double Player::reduceHealth2()
+{
+	strength = strength - 60; //reduction of health after getting bit by zombie
+	return strength;
+}
+
+
+
+double Player::healing()
+{
+	strength = strength + 30; //healing after taking pills
 	return strength;
 }
