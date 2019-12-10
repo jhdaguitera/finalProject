@@ -21,7 +21,8 @@
 #include "player.hpp"
 
 //default constructor
-GamePlay::GamePlay() {
+GamePlay::GamePlay()
+{
 	foyer = new Foyer();
 	livingRoom = new LivingRoom();
 	bedRoom1 = new BedRoom_1();
@@ -69,45 +70,129 @@ void GamePlay::linkedSpace()
 
 
 
+
+/*****************************************************************************************************************
+ interaction_1() method
+ *****************************************************************************************************************/
+
+void GamePlay::interaction_1()
+{
+	system("CLS");
+	std::cout << "\nAfter you choose an item from the chest...You hear footsteps running at you!" << std::endl;
+	std::cout << "\nA zombie has attacked you and bit you on the shoulder." << std::endl;
+	std::cout << "\nYou have take substantial health damage and the Zombie has stole last item from backpack." << std::endl;
+
+}
+
+
+/*****************************************************************************************************************
+ interaction_2() method
+ *****************************************************************************************************************/
+
+void GamePlay::interaction_2()
+{
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "\nYou see a window sill and see a riddle that reads: " << std::endl;
+	
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << "\nWHAT IS A QUESTION THAT YOU CANNOT LIE WHEN ANSWER???" << std::endl;
+	std::cout << "\nAre you __________ ? (fill in the blank)" << std::endl;
+	std::string answer;
+	std::cin >> answer;
+
+	if (answer == "sleeping")
+	{
+		std::cout << "You have figured out the riddle...you input the word sleeping into the lock and the window is opened " << std::endl;
+		std::cout << "You WIN! You have escaped the haunted house! " << std::endl;
+
+		exit(0);
+	}
+
+	else
+	{
+		std::cout << "You did not figure out the riddle...Zombies have come into the room and there is no escape. " << std::endl;
+		std::cout << "You are dead! GAME OVER! " << std::endl;
+		exit(0);
+	}
+		
+}
+
+
 /*****************************************************************************************************************
  gameOn() method
  *****************************************************************************************************************/
 
 void GamePlay::gameOn()
 {
-
 	Space* current = foyer; //where player starts initially in the game
 
-			//player health status
+	//player health status
 	Player player;
-	//drains 10% after after each step taken
-
-
-	int steps = 3; //game steps
-	
+		
+	int steps = 10; //game steps
 
 	while (steps > 0 && player.getStrength() > 0) //if step less than 0 or player strength less less than 0, loop stops
 	{
 		std::cout << "step: " << steps << std::endl;
-		if (current == bedRoom2)
-		{
-			std::cout << "You are in final room" << std::endl;
-		    player.printBackPack();
-		}
-		else
-		{
-		std::cout << player.getStrength();
 
-		int elementPosition = current->roomMenu(); //get element from chest in room
-		std::string itemReceived = current->getItem(elementPosition); //item recieved		
+		std::cout << "Player's health meter: " << player.getStrength() << "%"; //prints player health
+
+
+
+		int elementPosition = current->roomMenu();   //get element from chest in room
+
+		std::string itemReceived = current->getItem(elementPosition); //item recieved
+
 		player.addToBackPack(itemReceived); //added items put backback
 
+			
+
+		/*********************************************************************************************/
+		//if player in bedroom 2
+		if (current == bedRoom2)
+		{
+			std::cout << std::endl;
+			std::cout << std::endl;
+			system("CLS");
+			std::cout << "\nYou see a window and realize you might be able to escape through the window." << std::endl;
+			std::cout << "\nThere is a lock on the window that can be opened with the correct word inputted into the lock." << std::endl;
+			std::cout << "\nLook at the clues you have in your back pack for help." << std::endl;
+			
+			std::cout << std::endl;
+			std::cout << "\nYou unzip your back pack and look at the collected clues for ideas:";
+			player.printBackPack();
+
+			interaction_2();
+
+			steps = -1; //ends the loop
+
+		}
+
+		/*********************************************************************************************/
+		//if player in kitchen
+		if (current == kitchen)
+		{
+			interaction_1(); //calling interaction with zombie in kitchen
+			player.removeLastItem(); //zombie stole one item from bag
+
+			std::cout << "The remaining items inside back pack are: ";
+
+			Player player;
+			player.printBackPack(); //prints items in bag
+
+			
+						
+		}
+
+		/*********************************************************************************************/
 		//current room defined as current room pointing to next room
 		Space* top = current->getTop();
 		Space* right = current->getRight();
 		Space* left = current->getLeft();
 		Space* bottom = current->getBottom();
-
 
 		std::cout << "You are currently in " << current->getType() << ". Enter choice of where to move next: " << std::endl;
 
@@ -156,11 +241,9 @@ void GamePlay::gameOn()
 		//clears previous screen
 		system("CLS");
 
-
-
-		/**************************************/
-
 		std::cout << std::endl;
+
+		/*********************************************************************************************/
 
 		if (choice == 1)
 		{
@@ -187,36 +270,15 @@ void GamePlay::gameOn()
 		}
 
 
-
-
 		//counter
 		steps--;
 		player.reduceHealth();
-		}
 	}
 
+
 	player.printBackPack();
-}
-
-
-
-void interaction_1()
-{
-	std::cout << "After you choose an item from the chest...You hear footsteps running at you!" << std::endl;
-	std::cout << "A zombie has attacked you and bit you on the shoulder." << std::endl;
-	std::cout << "You have take substantial health damage and the Zombie has stole last item from backpack." << std::endl;
-
-	//removing lat item from vector
-
 
 }
-
-
-
-
-
-
-
 
 
 

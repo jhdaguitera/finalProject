@@ -23,8 +23,8 @@ BedRoom2::BedRoom2()
 	nameOfRoom = "Bed Room 2";
 
 	item;	//items inside each room
-	item.push_back("note2"); //box one
-	item.push_back("empty"); //empty
+	item.push_back("note: ZZZZzzzzzz"); //box one
+	item.push_back("note: ZZZZZzzzz"); //empty
 
 	statusPlayer = true; //true = inside current room
 }

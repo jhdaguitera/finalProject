@@ -22,8 +22,8 @@ Foyer::Foyer() {
 
 	nameOfRoom = "Foyer";
 
-	item.push_back("black widow spider"); //box one
-	item.push_back("empty"); //empty
+	item.push_back("note: The key is not a key."); //box one
+	item.push_back("pillow"); //empty
 
 	statusPlayer = true; //true = inside current room
 }

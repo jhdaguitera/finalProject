@@ -93,7 +93,7 @@ int Space::roomMenu()  //gives options for user to interact with space
 	std::cout << "|                    -|-                    |" << std::endl;
 	std::cout << "|                    / \\                    |" << std::endl;
 	std::cout << "--------------------------------------------- " << std::endl;
-	std::cout << "You discover there are two chests in the center of the " << nameOfRoom << std::endl;
+	std::cout << "You see two chests that might hold the clues to finding an escape. " << nameOfRoom << std::endl;
 
 	//chest options
 	std::cout << std::endl;

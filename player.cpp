@@ -55,7 +55,7 @@ void Player::printBackPack() //prints out the items they have collected
 	 
 }
 
-void Player::removeLastItem()
+void Player::removeLastItem() //remove last item from backpack when encountering a zombie
 {
 	backPack.erase(backPack.begin()+backPack.size()-1);
 
