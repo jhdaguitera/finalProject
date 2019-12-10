@@ -23,9 +23,16 @@ Description: this the file for implementing heman class objects and methods
 Player::Player()
 {
 	std::string type = "Player";
+
 	strength = 100; //starts at 100% health
 	
 
+}
+
+
+void Player::addToBackPack(std::string item)
+{
+	backPack.push_back(item);
 }
 
 
@@ -36,31 +43,30 @@ double Player::getStrength()
 	return strength;
 }
 
-/***********************************************************************************************************
-recoveryPotion() method
 
-***********************************************************************************************************/
-//recovers 20% life for winner of battle
 
-double Player::getEnergyDrain()
+void Player::printBackPack() //prints out the items they have collected
 {
-	return strength - (strength * 0.1);
 	
+	for (int i = 0; i < backPack.size(); i++)
+	{
+		std::cout << backPack[i];
+	}
+	 
+}
+
+void Player::removeLastItem()
+{
+	backPack.erase(backPack.begin()+backPack.size()-1);
+
+
 }
 
 
 
 
-
-
-/***********************************************************************************************************
-recoveryPotion() method
-
-***********************************************************************************************************/
-//recovers 20% life for winner of battle
-double Player::recovery()
+double Player::reduceHealth()
 {
-	strength = strength + (strength * 0.20);
+	strength = strength - 10; //reduction of health by 10% after each step
 	return strength;
 }
-

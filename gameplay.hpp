@@ -39,6 +39,8 @@ public:
 
 	void linkedSpace();
 	void gameOn();
+	void interaction_1();
+	void interaction_2();
 };
 
 #endif

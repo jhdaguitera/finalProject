@@ -78,21 +78,29 @@ void GamePlay::gameOn()
 
 	Space* current = foyer; //where player starts initially in the game
 
-	int steps = 10; //game steps
-	while (steps > 0)
+			//player health status
+	Player player;
+	//drains 10% after after each step taken
+
+
+	int steps = 3; //game steps
+	
+
+	while (steps > 0 && player.getStrength() > 0) //if step less than 0 or player strength less less than 0, loop stops
 	{
 		std::cout << "step: " << steps << std::endl;
+		if (current == bedRoom2)
+		{
+			std::cout << "You are in final room" << std::endl;
+		    player.printBackPack();
+		}
+		else
+		{
+		std::cout << player.getStrength();
 
-		//player health status
-		Player player;
-		//drains 10% after after each step taken
-		std::cout << "Current Health percentage: " << health.getStrength() - health.getStrength() * 1.1;
-
-
-
-		//current room accesses menu for use
-
-		int itemReceived = current->roomMenu();
+		int elementPosition = current->roomMenu(); //get element from chest in room
+		std::string itemReceived = current->getItem(elementPosition); //item recieved		
+		player.addToBackPack(itemReceived); //added items put backback
 
 		//current room defined as current room pointing to next room
 		Space* top = current->getTop();
@@ -179,10 +187,41 @@ void GamePlay::gameOn()
 		}
 
 
+
+
 		//counter
-		steps --;
+		steps--;
+		player.reduceHealth();
+		}
 	}
+
+	player.printBackPack();
 }
+
+
+
+void interaction_1()
+{
+	std::cout << "After you choose an item from the chest...You hear footsteps running at you!" << std::endl;
+	std::cout << "A zombie has attacked you and bit you on the shoulder." << std::endl;
+	std::cout << "You have take substantial health damage and the Zombie has stole last item from backpack." << std::endl;
+
+	//removing lat item from vector
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 

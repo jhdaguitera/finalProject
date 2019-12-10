@@ -8,6 +8,8 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <limits>
+
 #include "space.hpp"
 #include "map.hpp"
 

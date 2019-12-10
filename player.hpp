@@ -15,15 +15,16 @@ description: this the file for header of class objects and methods
 #include <vector>
 
 
-class Player 
+class Player
 {
 
 private:
 	int strength;
 
+	//back pack will hold all items
 	std::vector<std::string> backPack;
-	
-	
+
+
 public:
 	//default constructor
 	Player();
@@ -31,9 +32,14 @@ public:
 	//getter
 	double getStrength();
 
-	//recovers 20% life if wins battle
-	double recovery();
 
-	double getEnergyDrain();
+	void addToBackPack(std::string items);
+	void removeLastItem();
+
+	void printBackPack();
+
+	double reduceHealth();
+
 };
+
 #endif

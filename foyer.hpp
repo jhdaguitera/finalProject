@@ -22,7 +22,7 @@ public:
 
 	std::string getType();
 	
-	std::string getItem(int i);
+	
 	
 
 };

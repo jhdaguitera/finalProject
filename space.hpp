@@ -26,7 +26,10 @@ protected:
 	Space *bottom;
 
 	std::string nameOfRoom;
+
 	std::vector<std::string> item;	//items inside each room
+
+
 	bool statusPlayer; //true = inside current room
 
 public:
@@ -36,7 +39,7 @@ public:
 	Space* getRight();
 	Space* getBottom();
 
-	virtual std::string getItem(int i);
+	std::string getItem(int i); //gets contents of chests
 
 	virtual std::string getType();
 
