@@ -1,28 +1,25 @@
 /*****************************************************************************************************
 Name: Jason Daguitera
 CS 162
-File: foyer.hpp
+File:bedroom.hpp
 Description: this the header file for the class objects and methods
 
-****************************************************************************************************/
-#ifndef FOYER_HPP
-#define FOYER_HPP
+***************************************************************************************************/
+
+#ifndef BEDROOM_HPP
+#define BEDROOM_HPP
 
 #include "space.hpp"
-#include "foyer.hpp"
 
-class Foyer : public Space
+
+class BedRoom : public Space
 {
 
 private:
 
 public:
 	//default constructor
-	Foyer();
-
-	std::string getType();
-	
-	std::string getItem(int i);
+	BedRoom();
 	
 
 };

@@ -9,18 +9,20 @@ description: this the file for header of class objects and methods
 #define player_hpp
 
 #include <iostream>
-#include "character.hpp"
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include <vector>
 
 
-class Player : public Character
+class Player 
 {
 
 private:
 	int strength;
-	std::string backpack;
+
+	std::vector<std::string> backPack;
+	
 	
 public:
 	//default constructor
@@ -32,5 +34,6 @@ public:
 	//recovers 20% life if wins battle
 	double recovery();
 
+	double getEnergyDrain();
 };
 #endif

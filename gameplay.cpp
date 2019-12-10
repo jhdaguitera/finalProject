@@ -18,7 +18,7 @@
 #include "foyer.hpp"
 #include "gameplay.hpp"
 #include "diningroom.hpp"
-
+#include "player.hpp"
 
 //default constructor
 GamePlay::GamePlay() {
@@ -76,38 +76,46 @@ void GamePlay::linkedSpace()
 void GamePlay::gameOn()
 {
 
-	Space *current = foyer; //where player starts initially in the game
+	Space* current = foyer; //where player starts initially in the game
 
 	int steps = 10; //game steps
 	while (steps > 0)
 	{
 		std::cout << "step: " << steps << std::endl;
+
+		//player health status
+		Player player;
+		//drains 10% after after each step taken
+		std::cout << "Current Health percentage: " << health.getStrength() - health.getStrength() * 1.1;
+
+
+
 		//current room accesses menu for use
 
 		int itemReceived = current->roomMenu();
 
 		//current room defined as current room pointing to next room
-		Space *top = current->getTop();
-		Space *right = current->getRight();
-		Space *left = current->getLeft();
-		Space *bottom = current->getBottom();
+		Space* top = current->getTop();
+		Space* right = current->getRight();
+		Space* left = current->getLeft();
+		Space* bottom = current->getBottom();
 
 
 		std::cout << "You are currently in " << current->getType() << ". Enter choice of where to move next: " << std::endl;
 
-		if (left !=NULL)
+		if (left != NULL)
 		{
 			std::cout << "(1)LEFT: " << left->getType() << std::endl;
 		}
 
-		if (top !=NULL)
+		if (top != NULL)
 		{
 			std::cout << "(2)TOP: " << top->getType() << std::endl;
 		}
 
-		if (right !=NULL)
+		if (right != NULL)
 		{
-			std::cout << "(3)RIGHT: " << right->getType() << std::endl;		
+			std::cout << "(3)RIGHT: " << right->getType() << std::endl;
 		}
 
 		if (bottom != NULL) {
@@ -115,9 +123,26 @@ void GamePlay::gameOn()
 		}
 
 		std::cout << std::endl;
-		int chooseDirection = 0;
+		int choice = 0;
 		std::cout << "choice: ";
-		std::cin >> chooseDirection;
+		std::cin >> choice;
+
+		//validate user input
+		while (std::cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Invalid...try again" << std::endl;
+			std::cin >> choice;
+		}
+		//validate user input
+		while (choice < 1 || choice > 4)
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Invalid...try again" << std::endl;
+			std::cin >> choice;
+		}
 
 
 		//clears previous screen
@@ -126,36 +151,36 @@ void GamePlay::gameOn()
 
 
 		/**************************************/
-				
+
 		std::cout << std::endl;
-				
-		if (chooseDirection == 1)
+
+		if (choice == 1)
 		{
-			current = current->getLeft();			
+			current = current->getLeft();
 			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
 
-		if (chooseDirection == 2)
+		if (choice == 2)
 		{
-			current = current->getTop();			
+			current = current->getTop();
 			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
 
-		if (chooseDirection == 3)
+		if (choice == 3)
 		{
-			current = current->getRight();			
+			current = current->getRight();
 			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
 
-		if (chooseDirection == 4)
+		if (choice == 4)
 		{
-			current = current->getBottom();		
+			current = current->getBottom();
 			std::cout << "You now entered: " << current->getType() << std::endl;
 		}
 
 
 		//counter
-		steps--;
+		steps --;
 	}
 }
 

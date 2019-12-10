@@ -7,6 +7,7 @@
  ****************************************************************************************************/
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "space.hpp"
 #include "map.hpp"
 
@@ -76,12 +77,7 @@ roomMenu()
 int Space::roomMenu()  //gives options for user to interact with space
 {
 	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << "There two chests in the room: " << nameOfRoom << std::endl;
-	std::cout << std::endl;
-
-
-
+		
 	std::cout << "--------------------------------------------- " << std::endl;
 	std::cout << "|                                           |" << std::endl;
 	std::cout << "|                 (" << nameOfRoom << ")                 " << std::endl;
@@ -95,27 +91,66 @@ int Space::roomMenu()  //gives options for user to interact with space
 	std::cout << "|                    -|-                    |" << std::endl;
 	std::cout << "|                    / \\                    |" << std::endl;
 	std::cout << "--------------------------------------------- " << std::endl;
+	std::cout << "You discover there are two chests in the center of the " << nameOfRoom << std::endl;
 
+	//chest options
 	std::cout << std::endl;
-	//std::cout
-	//		<< "Choose to open chest (1) or (2): ";
-	//int chooseItem = 0;
-	//std::cin >> chooseItem;
+	std::cout << "Which do you choose to open - chest (1) or chest (2): ";
+	int choose = 0;
+	std::cin >> choose;
 
-	std::cout << std::endl;
-	std::cout << std::endl;
+	//validate user input
+	while (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid...try again" << std::endl;
+		std::cin >> choose;
+	}
+	//validate user input
+	while (choose < 1 || choose > 2)
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid...try again" << std::endl;
+		std::cin >> choose;
+	}
 
-	//return chooseItem;
-
-
-	std::cout << "Do you want to open up the map of the house? (1)yes or (2)no ";
+	   	
+	   	 
+	//opening map
+	std::cout << "Do you want to open up the map of the house? (1)yes or (2)no: ";
 	int openMap = 0;
 	std::cin >> openMap;
+
+	//validate user input
+	while (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid...try again" << std::endl;
+		std::cin >> openMap;
+	}
+	//validate user input
+	while (openMap < 1 || openMap > 2)
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid...try again" << std::endl;
+		std::cin >> openMap;
+	}
+
 	
 	if (openMap == 1)
 	{
 		Map();
 	}
-	return 0;
+
+
+
+
+
+
+	return choose;
 
 }

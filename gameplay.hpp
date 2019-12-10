@@ -31,12 +31,13 @@ private:
 	Space *bathRoom;
 	Space *diningRoom;
 
+	int steps;
+
 public:
 	//default constructor
 	GamePlay();
 
 	void linkedSpace();
-	void printRooms();
 	void gameOn();
 };
 

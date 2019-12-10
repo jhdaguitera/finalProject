@@ -22,9 +22,9 @@ Foyer::Foyer() {
 
 	nameOfRoom = "Foyer";
 
-	//item;	//items inside each room
-	//item.push_back("black widow spider"); //box one
-	//item.push_back("empty"); //empty
+	item;	//items inside each room
+	item.push_back("black widow spider"); //box one
+	item.push_back("empty"); //empty
 
 	statusPlayer = true; //true = inside current room
 }
@@ -35,3 +35,7 @@ std::string Foyer::getType() {
 	return nameOfRoom;
 }
 
+std::string Foyer::getItem(int i)
+{
+	return item[i-1];
+}

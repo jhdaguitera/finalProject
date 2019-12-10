@@ -14,7 +14,7 @@
 #include <string>
 #include <vector>
 #include "player.hpp"
-#include "character.hpp"
+
 
 class Space {
 
@@ -36,14 +36,15 @@ public:
 	Space* getRight();
 	Space* getBottom();
 
-	std::string getItem(int i);
-	std::string getType();
+	virtual std::string getItem(int i);
+
+	virtual std::string getType();
 
 	//setters
-	void setRight(Space*);
-	void setLeft(Space*);
-	void setTop(Space*);
-	void setBottom(Space*);
+	virtual void setRight(Space*);
+	virtual void setLeft(Space*);
+	virtual void setTop(Space*);
+	virtual void setBottom(Space*);
 
 	//menu
 	int roomMenu();

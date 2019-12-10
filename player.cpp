@@ -10,13 +10,22 @@ Description: this the file for implementing heman class objects and methods
 #include <ctime>
 #include <cstdlib>
 #include <string>
+#include <vector>
+#include "gameplay.hpp"
+
+
+
+
+
+
 
 //default constructor
 Player::Player()
 {
-	type = "Player";
+	std::string type = "Player";
 	strength = 100; //starts at 100% health
 	
+
 }
 
 
@@ -27,6 +36,17 @@ double Player::getStrength()
 	return strength;
 }
 
+/***********************************************************************************************************
+recoveryPotion() method
+
+***********************************************************************************************************/
+//recovers 20% life for winner of battle
+
+double Player::getEnergyDrain()
+{
+	return strength - (strength * 0.1);
+	
+}
 
 
 
