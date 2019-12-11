@@ -36,7 +36,18 @@ private:
 public:
 	//default constructor
 	GamePlay();
-	 
+	~GamePlay()
+	{
+		delete foyer;
+		delete livingRoom;
+		delete bedRoom1;
+		delete bedRoom2;
+		delete kitchen;
+		delete bathRoom;
+		delete diningRoom;
+
+	}
+
 
 	void linkedSpace();
 	void gameOn();

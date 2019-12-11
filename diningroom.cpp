@@ -23,8 +23,8 @@ DiningRoom::DiningRoom()
 	nameOfRoom = "Dining Room";
 
 	item;	//items inside each room
-	item.push_back("pain killers"); //box one
-	item.push_back("pain killers");
+	item.push_back("pain killers, "); //box one
+	item.push_back("pain killers, ");
 
 	statusPlayer = true; //true = inside current room
 }

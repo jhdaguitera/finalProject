@@ -23,8 +23,8 @@ Kitchen::Kitchen()
 	nameOfRoom = "Kitchen";
 
 	item;	//items inside each room
-	item.push_back("night cap"); //box one
-	item.push_back("empty - no clue"); //empty
+	item.push_back("night cap, "); //box one
+	item.push_back("night light, "); //empty
 
 	statusPlayer = true; //true = inside current room
 }

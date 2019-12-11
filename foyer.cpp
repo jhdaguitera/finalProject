@@ -22,8 +22,8 @@ Foyer::Foyer() {
 
 	nameOfRoom = "Foyer";
 
-	item.push_back(" blanket "); //box one
-	item.push_back(" empty - no clue "); //empty
+	item.push_back(" blanket,"); //box one
+	item.push_back(" empty - no clue, "); //empty
 
 	statusPlayer = true; //true = inside current room
 }

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-
+#include <limits>
 #include "space.hpp"
 #include "bedroom1.hpp"
 #include "bedroom2.hpp"
@@ -77,7 +77,8 @@ void GamePlay::linkedSpace()
 
 void GamePlay::interaction_1()
 {
-	
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "\nAfter you choose an item from the chest...You hear footsteps running at you!" << std::endl;
 	std::cout << "\nA zombie has attacked you and bit you on the shoulder." << std::endl;
 	std::cout << "\nYou have take substantial health damage and the Zombie has stole last item from backpack." << std::endl;
@@ -91,8 +92,8 @@ void GamePlay::interaction_1()
 
 void GamePlay::interaction_2()
 {		
-	
-
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "\nYou see a window and realize you might be able to escape through the window." << std::endl;
 	std::cout << "\nThere is a lock on the window that can be opened with the correct word inputted into the lock." << std::endl;
 	std::cout << "\nLook at the clues you have in your back pack for help." << std::endl;
@@ -107,7 +108,7 @@ void GamePlay::interaction_2()
 	
 	std::cout << std::endl;
 	std::cout << std::endl;
-	std::cout << "\nWHAT IS A QUESTION THAT YOU CANNOT LIE WHEN ANSWERING???" << std::endl;
+	std::cout << "\nRIDDLE: WHAT IS A QUESTION THAT YOU CANNOT ANSWER WITH A LIE???" << std::endl;
 	std::cout << "\nAre you __________ ? (fill in the blank)" << std::endl;
 
 	std::string answer;
@@ -117,7 +118,7 @@ void GamePlay::interaction_2()
 	{
 		std::cout << "You have figured out the riddle...you input the word sleeping into the lock and the window is opened " << std::endl;
 		std::cout << "You WIN! You have escaped the haunted house! " << std::endl;
-
+		steps = -1; //ends loop
 		
 	}
 
@@ -125,7 +126,7 @@ void GamePlay::interaction_2()
 	{
 		std::cout << "You did not figure out the riddle...Zombies have come into the room and there is no escape. " << std::endl;
 		std::cout << "You are dead! GAME OVER! " << std::endl;
-		
+		steps = -1; //ends loop
 	}
 		
 }
@@ -139,8 +140,8 @@ void GamePlay::interaction_2()
 
 void GamePlay::interaction_3()
 {
-	
-
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "\nAfter taking the pain killer pills you feel better from the zombie bites" << std::endl;
 	std::cout << "\nYou begin to feel rejuvenated." << std::endl;
 	std::cout << "\nYour health meter has increased!" << std::endl;
@@ -157,8 +158,8 @@ void GamePlay::interaction_3()
 
 void GamePlay::interaction_4()
 {
-	
-
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::cout << "\nUpon entering the room, you feel a strange presence in the room." << std::endl;
 	std::cout << "\nA ghost of a girl has manifested and has begun to sing a song" << std::endl;
 	std::cout << "\nShe sings: Are you sleeping, Are you sleeping," << std::endl;
@@ -182,21 +183,21 @@ void GamePlay::gameOn()
 
 	//player health status
 	Player player;
-		
+
 	int steps = 10; //game steps
 
 	while (steps >= 1 && player.getStrength() >= 1) //if step less than 0 or player strength less less than 0, loop stops
 	{
-		
+
 		std::cout << "Player's health meter: " << player.getStrength() << "%"; //prints player health
 
 		int elementPosition = current->roomMenu();   //get element from chest in room
-				
+
 
 		std::string itemReceived = current->getItem(elementPosition); //item recieved
 
 		player.addToBackPack(itemReceived); //added items put backback
-		
+
 		//check backpack contents
 		std::cout << " \nDo you want to look at the items collected in your back pack? (1) yes or (2) no: ";
 		int choice1 = 0;
@@ -227,7 +228,7 @@ void GamePlay::gameOn()
 		{
 			std::cout << "Will not check back pack." << std::endl;
 		}
-			
+
 
 		/*********************************************************************************************/
 		//if player in bedroom 2
@@ -241,141 +242,127 @@ void GamePlay::gameOn()
 
 		}
 
-		/*********************************************************************************************/
 		//if player in kitchen
-		if (current == kitchen)
+		else if (current == kitchen)
 		{
 			interaction_1(); //calling interaction with zombie in kitchen
 			player.reduceHealth2();
 
 			std::cout << "\nPlayer's health meter: " << player.getStrength() << "%" << std::endl; //prints
-			
+
 			player.removeLastItem(); //zombie stole one item from bag
 
 			std::cout << "The remaining items inside back pack are: ";
 
 			player.printBackPack(); //prints items in bag
 
-
-			//if died while zombie interaction
-			
 		}
 
-		if (player.getStrength() <= 0)
-		{
-			steps = -1; //break out of loop
-		}
-		else
-		{
-			std::cout << "You barely survived but can still walk away from zombie.";
-		}
-		/*********************************************************************************************/
 		//if player in dining room
-		if (current == diningRoom)
+		else if (current == diningRoom)
 		{
 			interaction_3(); //calling interaction 
-			
+
 			std::cout << "You received healing from the pills. Health points is now: ";
 			std::cout << player.healing() << " points." << std::endl;
 
-
-			
-			
 		}
 
-		/*********************************************************************************************/
 		//if player in bedroom1 
-		if (current == bedRoom1)
+		else if (current == bedRoom1)
 		{
 			interaction_4(); //calling interaction 
 
 		}
 
 
-
-		/*********************************************************************************************/
-		//current room defined as current room pointing to next room
-		Space* top = current->getTop();
-		Space* right = current->getRight();
-		Space* left = current->getLeft();
-		Space* bottom = current->getBottom();
-
-		std::cout << "\n\nYou are currently in " << current->getType() << ". Enter choice of where to move next: " << std::endl;
-
-		if (left != NULL)
-		{
-			std::cout << "(1)LEFT: " << left->getType() << std::endl;
-		}
-
-		if (top != NULL)
-		{
-			std::cout << "(2)TOP: " << top->getType() << std::endl;
-		}
-
-		if (right != NULL)
-		{
-			std::cout << "(3)RIGHT: " << right->getType() << std::endl;
-		}
-
-		if (bottom != NULL) {
-			std::cout << "(4)BOTTOM: " << bottom->getType() << std::endl;
-		}
-
-		std::cout << std::endl;
-		int choice = 0;
-		std::cout << "choice: ";
-		std::cin >> choice;
-
-		//validate user input
-		while (std::cin.fail())
-		{
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Invalid...try again" << std::endl;
-			std::cin >> choice;
-		}
-		//validate user input
-		while (choice < 1 || choice > 4)
-		{
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Invalid...try again" << std::endl;
-			std::cin >> choice;
-		}
-
-
-		//clears previous screen
-		system("CLS");
-
-		std::cout << std::endl;
-
 		/*********************************************************************************************/
 
-		if (choice == 1)
+		if (player.getStrength() > 0)
 		{
-			current = current->getLeft();
-			std::cout << "You now entered: " << current->getType() << std::endl;
+
+			//current room defined as current room pointing to next room
+			Space* top = current->getTop();
+			Space* right = current->getRight();
+			Space* left = current->getLeft();
+			Space* bottom = current->getBottom();
+
+			std::cout << "\n\nYou are currently in " << current->getType() << ". Enter choice of where to move next: " << std::endl;
+
+			if (left != NULL)
+			{
+				std::cout << "(1)LEFT: " << left->getType() << std::endl;
+			}
+
+			if (top != NULL)
+			{
+				std::cout << "(2)TOP: " << top->getType() << std::endl;
+			}
+
+			if (right != NULL)
+			{
+				std::cout << "(3)RIGHT: " << right->getType() << std::endl;
+			}
+
+			if (bottom != NULL) {
+				std::cout << "(4)BOTTOM: " << bottom->getType() << std::endl;
+			}
+
+			std::cout << std::endl;
+			int choice = 0;
+			std::cout << "choice: ";
+			std::cin >> choice;
+
+			//validate user input
+			while (std::cin.fail())
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Invalid...try again" << std::endl;
+				std::cin >> choice;
+			}
+			//validate user input
+			while (choice < 1 || choice > 4)
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Invalid...try again" << std::endl;
+				std::cin >> choice;
+			}
+
+
+			//clears previous screen
+			system("CLS");
+
+			std::cout << std::endl;
+
+			/*********************************************************************************************/
+
+			if (choice == 1)
+			{
+				current = current->getLeft();
+				std::cout << "You now entered: " << current->getType() << std::endl;
+			}
+
+			else if (choice == 2)
+			{
+				current = current->getTop();
+				std::cout << "You now entered: " << current->getType() << std::endl;
+			}
+
+			else if (choice == 3)
+			{
+				current = current->getRight();
+				std::cout << "You now entered: " << current->getType() << std::endl;
+			}
+
+			else if (choice == 4)
+			{
+				current = current->getBottom();
+				std::cout << "You now entered: " << current->getType() << std::endl;
+			}
+
 		}
-
-		if (choice == 2)
-		{
-			current = current->getTop();
-			std::cout << "You now entered: " << current->getType() << std::endl;
-		}
-
-		if (choice == 3)
-		{
-			current = current->getRight();
-			std::cout << "You now entered: " << current->getType() << std::endl;
-		}
-
-		if (choice == 4)
-		{
-			current = current->getBottom();
-			std::cout << "You now entered: " << current->getType() << std::endl;
-		}
-
-
 		//counter
 		steps--;
 		player.reduceHealth();
@@ -383,21 +370,15 @@ void GamePlay::gameOn()
 
 	}
 
-		
+
 	std::cout << "Your life has drained to 0% ...You lose! GAME OVER!" << std::endl;
 
 	//free memory
-	delete foyer;
-	delete livingRoom;
-	delete bedRoom1;
-	delete bedRoom2;
-	delete kitchen;
-	delete bathRoom;
-	delete diningRoom;
+	GamePlay::~GamePlay();
 	
+
+
 }
-
-
 
 
 
