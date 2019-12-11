@@ -99,9 +99,6 @@ void GamePlay::interaction_2()
 
 	std::cout << std::endl;
 	std::cout << "\nYou unzip your back pack and look at the collected clues for ideas:";
-
-	Player player;
-	player.printBackPack();
 	
 	std::cout << std::endl;
 	std::cout << std::endl;
@@ -142,13 +139,11 @@ void GamePlay::interaction_2()
 
 void GamePlay::interaction_3()
 {
-	system("CLS");
 	std::cout << "\nAfter taking the pain killer pills you feel better from the zombie bites" << std::endl;
-	std::cout << "\nAYou begin to feel rejuvenated." << std::endl;
+	std::cout << "\nYou begin to feel rejuvenated." << std::endl;
 	std::cout << "\nYour health meter has increased!" << std::endl;
 
-	Player player;
-	std::cout << player.healing(); //prints healing
+	
 
 }
 
@@ -238,6 +233,7 @@ void GamePlay::gameOn()
 		{
 
 			interaction_2(); //call interaction
+			player.printBackPack();
 
 			steps = -1; //ends the loop
 
@@ -248,33 +244,33 @@ void GamePlay::gameOn()
 		if (current == kitchen)
 		{
 			interaction_1(); //calling interaction with zombie in kitchen
+			player.reduceHealth2();
+
+			std::cout << "\nPlayer's health meter: " << player.getStrength() << "%" << std::endl; //prints
+			
 			player.removeLastItem(); //zombie stole one item from bag
 
 			std::cout << "The remaining items inside back pack are: ";
 
-			Player player;
 			player.printBackPack(); //prints items in bag
 
-			player.reduceHealth2();
-
-			std::cout << "\nPlayer's health meter: " << player.getStrength() << "%" << std::endl; //prints player health
+			
 						
 		}
 
 
 		/*********************************************************************************************/
 		//if player in dining room
-		if (current == kitchen)
+		if (current == diningRoom)
 		{
 			interaction_3(); //calling interaction 
 			
-			std::cout << "You received healing from the pills: ";
+			std::cout << "You received healing from the pills. Health points increased by: " << std::endl;
+			std::cout << player.healing() << " points." << std::endl;
 
-			Player player;
-			std::cout << player.healing();
-						
-			std::cout << "\nPlayer's health meter: " << player.getStrength() << "%" << std::endl; //prints player health
 
+			
+			
 		}
 
 		/*********************************************************************************************/
@@ -375,9 +371,7 @@ void GamePlay::gameOn()
 		player.reduceHealth();
 	}
 
-
-	player.printBackPack();
-	
+		
 	std::cout << "Your life has drained to 0% ...You lose! GAME OVER!" << std::endl;
 
 }

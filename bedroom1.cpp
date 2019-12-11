@@ -23,8 +23,8 @@ BedRoom_1::BedRoom_1()
 	nameOfRoom = "Bed Room 1";
 
 	item;	//items inside each room
-	item.push_back("blanket"); //box one
-	item.push_back("lullaby song"); //empty
+	item.push_back(" empty - no clue "); //box one
+	item.push_back(" lullaby song "); //empty
 
 	statusPlayer = true; //true = inside current room
 }

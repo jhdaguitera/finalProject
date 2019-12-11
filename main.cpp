@@ -26,7 +26,7 @@ int main()
 		std::cout << "You goal is figure how to get out of this haunted house. " << std::endl;
 		std::cout << std::endl;
 
-		std::cout << "Would you like to explore this house? (1)yes or (2)no: ";
+		std::cout << "Would you like to explore this house? (1) yes or (2) no: ";
 		int choose = 0;
 		std::cin >> choose;
 

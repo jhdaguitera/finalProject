@@ -27,7 +27,7 @@ LivingRoom::LivingRoom()
 
 	item;	//items inside each room
 	item.push_back("pillow"); //chest 1
-	item.push_back("blanket"); //chest 2
+	item.push_back("empty - no clue"); //chest 2
 
 	statusPlayer = true; //true = inside current room
 

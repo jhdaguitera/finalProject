@@ -24,7 +24,7 @@ Kitchen::Kitchen()
 
 	item;	//items inside each room
 	item.push_back("night cap"); //box one
-	item.push_back("pillow"); //empty
+	item.push_back("empty - no clue"); //empty
 
 	statusPlayer = true; //true = inside current room
 }

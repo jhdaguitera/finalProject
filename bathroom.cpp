@@ -23,8 +23,8 @@ BathRoom::BathRoom()
 	nameOfRoom = "Bath Room";
 
 	item;	//items inside each room
-	item.push_back("blindfold"); //box one
-	item.push_back("sleeping pills"); //empty
+	item.push_back(" blindfold "); //box one
+	item.push_back(" sleeping pills "); //empty
 
 	statusPlayer = true; //true = inside current room
 }
