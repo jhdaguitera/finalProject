@@ -86,3 +86,11 @@ double Player::healing()
 	strength = strength + 30; //healing after taking pills
 	return strength;
 }
+
+double Player::kill()
+{
+
+	strength = strength * 0; //kills player
+
+	return strength;
+}

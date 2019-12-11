@@ -40,6 +40,8 @@ public:
 	double reduceHealth2();	
 	double healing();
 
+	double kill();
+
 
 };
 

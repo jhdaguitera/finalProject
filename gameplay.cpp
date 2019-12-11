@@ -125,7 +125,6 @@ void GamePlay::interaction_2()
 	else
 	{
 		std::cout << "You did not figure out the riddle...Zombies have come into the room and there is no escape. " << std::endl;
-		std::cout << "You are dead! GAME OVER! " << std::endl;
 		steps = -1; //ends loop
 	}
 		
@@ -145,9 +144,7 @@ void GamePlay::interaction_3()
 	std::cout << "\nAfter taking the pain killer pills you feel better from the zombie bites" << std::endl;
 	std::cout << "\nYou begin to feel rejuvenated." << std::endl;
 	std::cout << "\nYour health meter has increased!" << std::endl;
-
-	
-
+		
 }
 
 
@@ -168,8 +165,6 @@ void GamePlay::interaction_4()
 	std::cout << "\nDing Ding Dong, Ding Ding Dong," << std::endl;
 
 	std::cout << "\nCould this be be a clue?" << std::endl;
-
-	
 
 }
 
@@ -236,9 +231,9 @@ void GamePlay::gameOn()
 		{
 
 			interaction_2(); //call interaction
-			player.printBackPack();
-
+			
 			steps = -1; //ends the loop - game done!
+			player.kill(); //sets player health to 0
 
 		}
 
@@ -373,45 +368,10 @@ void GamePlay::gameOn()
 
 	std::cout << "Your life has drained to 0% ...You lose! GAME OVER!" << std::endl;
 
-	//free memory
-	GamePlay::~GamePlay();
+	
 	
 
 
 }
 
 
-
-
-/*
-
-void GamePlay::printRooms()
-{
-	Space *current = foyer;
-
-	
-	while (current) 
-	{
-		std::cout << current->getType() << std::endl;
-		current = current->getRight();
-	}
-
-	current = bedRoom2;
-	while (current)
-	{
-		std::cout << current->getType() << std::endl;
-		current = current->getLeft();
-	}
-
-	current = livingRoom->getTop();
-	std::cout << current->getType() << std::endl;
-
-	current = livingRoom->getBottom();
-	std::cout << current->getType() << std::endl;
-
-	current = kitchen->getTop();
-	std::cout << current->getType() << std::endl;
-
-}
-
-*/
