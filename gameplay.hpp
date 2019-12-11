@@ -36,6 +36,7 @@ private:
 public:
 	//default constructor
 	GamePlay();
+	 
 
 	void linkedSpace();
 	void gameOn();
@@ -43,6 +44,8 @@ public:
 	void interaction_2();
 	void interaction_3();
 	void interaction_4();
+
+	
 };
 
 #endif

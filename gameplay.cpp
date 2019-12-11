@@ -77,7 +77,7 @@ void GamePlay::linkedSpace()
 
 void GamePlay::interaction_1()
 {
-	system("CLS");
+	
 	std::cout << "\nAfter you choose an item from the chest...You hear footsteps running at you!" << std::endl;
 	std::cout << "\nA zombie has attacked you and bit you on the shoulder." << std::endl;
 	std::cout << "\nYou have take substantial health damage and the Zombie has stole last item from backpack." << std::endl;
@@ -90,9 +90,9 @@ void GamePlay::interaction_1()
  *****************************************************************************************************************/
 
 void GamePlay::interaction_2()
-{
-		
-	system("CLS");
+{		
+	
+
 	std::cout << "\nYou see a window and realize you might be able to escape through the window." << std::endl;
 	std::cout << "\nThere is a lock on the window that can be opened with the correct word inputted into the lock." << std::endl;
 	std::cout << "\nLook at the clues you have in your back pack for help." << std::endl;
@@ -118,14 +118,14 @@ void GamePlay::interaction_2()
 		std::cout << "You have figured out the riddle...you input the word sleeping into the lock and the window is opened " << std::endl;
 		std::cout << "You WIN! You have escaped the haunted house! " << std::endl;
 
-		exit(0);
+		
 	}
 
 	else
 	{
 		std::cout << "You did not figure out the riddle...Zombies have come into the room and there is no escape. " << std::endl;
 		std::cout << "You are dead! GAME OVER! " << std::endl;
-		exit(0);
+		
 	}
 		
 }
@@ -139,6 +139,8 @@ void GamePlay::interaction_2()
 
 void GamePlay::interaction_3()
 {
+	
+
 	std::cout << "\nAfter taking the pain killer pills you feel better from the zombie bites" << std::endl;
 	std::cout << "\nYou begin to feel rejuvenated." << std::endl;
 	std::cout << "\nYour health meter has increased!" << std::endl;
@@ -155,7 +157,8 @@ void GamePlay::interaction_3()
 
 void GamePlay::interaction_4()
 {
-	system("CLS");
+	
+
 	std::cout << "\nUpon entering the room, you feel a strange presence in the room." << std::endl;
 	std::cout << "\nA ghost of a girl has manifested and has begun to sing a song" << std::endl;
 	std::cout << "\nShe sings: Are you sleeping, Are you sleeping," << std::endl;
@@ -182,10 +185,9 @@ void GamePlay::gameOn()
 		
 	int steps = 10; //game steps
 
-	while (steps > 0 && player.getStrength() > 0) //if step less than 0 or player strength less less than 0, loop stops
+	while (steps >= 1 && player.getStrength() >= 1) //if step less than 0 or player strength less less than 0, loop stops
 	{
-		//std::cout << "step: " << steps << std::endl;
-
+		
 		std::cout << "Player's health meter: " << player.getStrength() << "%"; //prints player health
 
 		int elementPosition = current->roomMenu();   //get element from chest in room
@@ -235,7 +237,7 @@ void GamePlay::gameOn()
 			interaction_2(); //call interaction
 			player.printBackPack();
 
-			steps = -1; //ends the loop
+			steps = -1; //ends the loop - game done!
 
 		}
 
@@ -254,18 +256,26 @@ void GamePlay::gameOn()
 
 			player.printBackPack(); //prints items in bag
 
+
+			//if died while zombie interaction
 			
-						
 		}
 
-
+		if (player.getStrength() <= 0)
+		{
+			steps = -1; //break out of loop
+		}
+		else
+		{
+			std::cout << "You barely survived but can still walk away from zombie.";
+		}
 		/*********************************************************************************************/
 		//if player in dining room
 		if (current == diningRoom)
 		{
 			interaction_3(); //calling interaction 
 			
-			std::cout << "You received healing from the pills. Health points increased by: " << std::endl;
+			std::cout << "You received healing from the pills. Health points is now: ";
 			std::cout << player.healing() << " points." << std::endl;
 
 
@@ -369,11 +379,22 @@ void GamePlay::gameOn()
 		//counter
 		steps--;
 		player.reduceHealth();
+
+
 	}
 
 		
 	std::cout << "Your life has drained to 0% ...You lose! GAME OVER!" << std::endl;
 
+	//free memory
+	delete foyer;
+	delete livingRoom;
+	delete bedRoom1;
+	delete bedRoom2;
+	delete kitchen;
+	delete bathRoom;
+	delete diningRoom;
+	
 }
 
 
